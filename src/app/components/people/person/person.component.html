@@ -1,0 +1,82 @@
+<div class="card mt-5">
+  <div class="card-body">
+    <form #personForm="ngForm" (ngSubmit)="onSubmit(personForm)">
+      <div class="form-group">
+
+        <input type="hidden" name="$key" #$key="ngModel" 
+        [(ngModel)]="personService.selectedPerson.$key">
+
+        <input 
+          type="text"
+          class="form-control"
+          name="id"
+          #id="ngModel"
+          [(ngModel)]="personService.selectedPerson.id"
+          placeholder="Agregue ID"
+        >
+
+        <input 
+          type="text"
+          class="form-control"
+          name="name"
+          #name="ngModel"
+          [(ngModel)]="personService.selectedPerson.name"
+          placeholder="Agregue Nombres"
+        >
+
+        <input 
+          type="text"
+          class="form-control"
+          name="lastn"
+          #lastn="ngModel"
+          [(ngModel)]="personService.selectedPerson.lastn"
+          placeholder="Agregue Apellidos"
+        >
+
+        <input 
+          type="text"
+          class="form-control"
+          name="city"
+          #city="ngModel"
+          [(ngModel)]="personService.selectedPerson.city"
+          placeholder="Agregue Ciudad"
+        >
+
+        <input 
+          type="text"
+          class="form-control"
+          name="country"
+          #country="ngModel"
+          [(ngModel)]="personService.selectedPerson.country"
+          placeholder="Agregue Pais"
+        >
+
+        <input 
+          type="text"
+          class="form-control"
+          name="phone"
+          #phone="ngModel"
+          [(ngModel)]="personService.selectedPerson.phone"
+          placeholder="Agregue Telefono"
+        >
+
+        <input 
+          type="text"
+          class="form-control"
+          name="email"
+          #email="ngModel"
+          [(ngModel)]="personService.selectedPerson.email"
+          placeholder="Agregue E-mail"
+        >
+      </div>
+      <div class="form-group">
+        <button class="btn btn-info" type="submit">
+          <i class="fa fa-plus-circle"></i> Agregar
+        </button>
+        <button class="btn btn-danger" type="reset" (click)="resetForm(personForm)">
+            <i class="fa fa-undo"></i> Reset
+          </button>
+      </div>
+    </form>
+  </div>
+</div>
